@@ -14,6 +14,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { CockpitComponent } from './data-binding/cockpit/cockpit.component';
+import { ServerElementComponent } from './data-binding/server-element/server-element.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    DataBindingComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,6 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     HttpModule
   ],
   providers: [],
-  bootstrap: [TestComponent]
+  bootstrap: [DataBindingComponent]
 })
 export class AppModule { }
