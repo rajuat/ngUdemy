@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent {
-serverElements = [{name: "Test server", type: "server", content: "This is a test content"}];
-  
-  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+  serverElements = [{ name: "Test server", type: "server", content: "This is a test content" }];
+
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
@@ -16,11 +16,11 @@ serverElements = [{name: "Test server", type: "server", content: "This is a test
     });
   }
 
-  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+  onBlueprintAdded(blueprintData: { blueprintName: string, blueprintContent: string }) {
     this.serverElements.push({
       type: 'blueprint',
-      name: blueprintData.serverName,
-      content: blueprintData.serverContent
+      name: blueprintData.blueprintName,
+      content: blueprintData.blueprintContent
     });
   }
 
