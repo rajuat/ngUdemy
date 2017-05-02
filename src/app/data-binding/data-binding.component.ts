@@ -24,4 +24,8 @@ export class DataBindingComponent {
     });
   }
 
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
+
 }
