@@ -20,6 +20,13 @@ import { ServerElementComponent } from './data-binding/server-element/server-ele
 import { DirectivesComponent } from './directives/directives.component';
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+import { DropdownDirective } from "app/shared/dropdown.directive";
+import { AccountsComponent } from './accounts/accounts.component';
+import { AccountComponent } from './accounts/account/account.component';
+import { NewAccountComponent } from './accounts/new-account/new-account.component';
+import { LoggingService } from "app/accounts/logging.service";
+import { AccountsService } from "app/accounts/accounts.service";
 
 @NgModule({
   declarations: [
@@ -39,14 +46,19 @@ import { BetterHighlightDirective } from './directives/better-highlight.directiv
     ServerElementComponent,
     DirectivesComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnlessDirective,
+    DropdownDirective,
+    AccountsComponent,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [DirectivesComponent]
+  providers: [AccountsService, LoggingService],
+  bootstrap: [AccountsComponent]
 })
 export class AppModule { }
