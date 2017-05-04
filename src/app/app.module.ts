@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
-import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
+import { ServerComponent as BasicServerComponent } from './test/server/server.component';
+import { ServersComponent as BasicServersComponent } from './test/servers/servers.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -28,13 +28,20 @@ import { AccountComponent } from './accounts/account/account.component';
 import { NewAccountComponent } from './accounts/new-account/new-account.component';
 import { LoggingService } from "app/accounts/logging.service";
 import { AccountsService } from "app/accounts/accounts.service";
+import { RoutingComponent } from './routing/routing.component';
+import { HomeComponent } from './routing/home/home.component';
+import { ServersComponent } from './routing/servers/servers.component';
+import { EditServerComponent } from './routing/servers/edit-server/edit-server.component';
+import { ServerComponent } from './routing/servers/server/server.component';
+import { UsersComponent } from './routing/users/users.component';
+import { UserComponent } from './routing/users/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    ServerComponent,
-    ServersComponent,
+    BasicServerComponent,
+    BasicServersComponent,
     HeaderComponent,
     RecipesComponent,
     RecipeListComponent,
@@ -52,7 +59,14 @@ import { AccountsService } from "app/accounts/accounts.service";
     DropdownDirective,
     AccountsComponent,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    RoutingComponent,
+    HomeComponent,
+    ServersComponent,
+    EditServerComponent,
+    ServerComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +74,6 @@ import { AccountsService } from "app/accounts/accounts.service";
     HttpModule
   ],
   providers: [AccountsService, LoggingService, ShoppingListService],
-  bootstrap: [AppComponent]
+  bootstrap: [RoutingComponent]
 })
 export class AppModule { }

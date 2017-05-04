@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-servers',
-  //selector: '[app-servers]',
-  //selector: '.app-servers',
+  selector: 'app-basic-servers',
+  //selector: '[app-basic-servers]',
+  //selector: '.app-basic-servers',
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
@@ -18,24 +18,24 @@ export class ServersComponent implements OnInit {
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
-    }, 2000 );
+    }, 2000);
 
-   }
+  }
 
   ngOnInit() {
   }
 
-  onCreateServer(){
+  onCreateServer() {
     this.serverCreated = true;
     this.servers.push(this.serverName);
     this.serverCreationStatus = "Server was created! Name was " + this.serverName;
   }
 
-  onUpdateServerName(event: Event){
+  onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
 
-  onRemoveServer(id: number){
+  onRemoveServer(id: number) {
     const position = id;
     this.servers.splice(position, 1);
   }
