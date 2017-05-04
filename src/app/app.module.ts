@@ -1,3 +1,4 @@
+import { ServersService } from './routing/servers/servers.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -40,7 +41,10 @@ import { UserComponent } from './routing/users/user/user.component';
 const appRoutes: Route[] = [
   { path: '', component: HomeComponent, pathMatch: "full" },
   { path: 'users', component: UsersComponent },
+  { path: 'users/:id/:name', component: UserComponent },
   { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id', component: ServerComponent },
+  { path: 'servers/:id/edit', component: EditServerComponent }
 ];
 
 @NgModule({
@@ -81,7 +85,12 @@ const appRoutes: Route[] = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AccountsService, LoggingService, ShoppingListService],
+  providers: [
+    AccountsService, 
+    LoggingService, 
+    ShoppingListService,
+    ServersService
+    ],
   bootstrap: [RoutingComponent]
 })
 export class AppModule { }
