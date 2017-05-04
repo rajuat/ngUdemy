@@ -1,6 +1,7 @@
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Route, RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -35,6 +36,12 @@ import { EditServerComponent } from './routing/servers/edit-server/edit-server.c
 import { ServerComponent } from './routing/servers/server/server.component';
 import { UsersComponent } from './routing/users/users.component';
 import { UserComponent } from './routing/users/user/user.component';
+
+const appRoutes: Route[] = [
+  { path: '', component: HomeComponent, pathMatch: "full" },
+  { path: 'users', component: UsersComponent },
+  { path: 'servers', component: ServersComponent },
+];
 
 @NgModule({
   declarations: [
@@ -71,7 +78,8 @@ import { UserComponent } from './routing/users/user/user.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AccountsService, LoggingService, ShoppingListService],
   bootstrap: [RoutingComponent]
