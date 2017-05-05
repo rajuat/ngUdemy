@@ -37,14 +37,23 @@ import { EditServerComponent } from './routing/servers/edit-server/edit-server.c
 import { ServerComponent } from './routing/servers/server/server.component';
 import { UsersComponent } from './routing/users/users.component';
 import { UserComponent } from './routing/users/user/user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Route[] = [
   { path: '', component: HomeComponent, pathMatch: "full" },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/:id/:name', component: UserComponent },
-  { path: 'servers', component: ServersComponent },
-  { path: 'servers/:id', component: ServerComponent },
-  { path: 'servers/:id/edit', component: EditServerComponent }
+  {
+    path: 'users', component: UsersComponent, children: [
+      { path: ':id/:name', component: UserComponent }
+    ]
+  },
+  {
+    path: 'servers', component: ServersComponent, children: [
+      { path: ':id', component: ServerComponent },
+      { path: ':id/edit', component: EditServerComponent }
+    ]
+  },
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({
@@ -77,7 +86,8 @@ const appRoutes: Route[] = [
     EditServerComponent,
     ServerComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -86,11 +96,11 @@ const appRoutes: Route[] = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AccountsService, 
-    LoggingService, 
+    AccountsService,
+    LoggingService,
     ShoppingListService,
     ServersService
-    ],
+  ],
   bootstrap: [RoutingComponent]
 })
 export class AppModule { }
