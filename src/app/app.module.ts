@@ -38,23 +38,7 @@ import { ServerComponent } from './routing/servers/server/server.component';
 import { UsersComponent } from './routing/users/users.component';
 import { UserComponent } from './routing/users/user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-const appRoutes: Route[] = [
-  { path: '', component: HomeComponent, pathMatch: "full" },
-  {
-    path: 'users', component: UsersComponent, children: [
-      { path: ':id/:name', component: UserComponent }
-    ]
-  },
-  {
-    path: 'servers', component: ServersComponent, children: [
-      { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent }
-    ]
-  },
-  { path: 'not-found', component: PageNotFoundComponent },
-  { path: '**', redirectTo: '/not-found' },
-];
+import { AppRoutingModule } from "app/routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -93,7 +77,7 @@ const appRoutes: Route[] = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [
     AccountsService,
