@@ -33,8 +33,11 @@ private recipes: Recipe[] = [
 
   public getRecipes(){
       return this.recipes.slice();
-  }  
+  }
 
+  public getRecipe(id: number){
+      return this.recipes[id];
+  }
   public addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
