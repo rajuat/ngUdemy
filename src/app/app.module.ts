@@ -1,3 +1,4 @@
+import { ObservablesRoutingModule } from './observables/observables-routing.module';
 import { ServersService } from './routing/servers/servers.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -47,6 +48,9 @@ import { ServerResolver } from "app/routing/servers/server/server-resolver.servi
 import { AppRouteModule } from "app/app-routing.module";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { HomeComponent as ObservablesHomeComponent } from './observables/home/home.component';
+import { UserComponent as ObservablesUserComponent } from './observables/user/user.component';
 
 @NgModule({
   declarations: [
@@ -82,14 +86,18 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     PageNotFoundComponent,
     ErrorPageComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ObservablesComponent,
+    ObservablesHomeComponent,
+    ObservablesUserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     //AppRoutingModule,
-    AppRouteModule
+    AppRouteModule,
+    //ObservablesRoutingModule
   ],
   providers: [
     AccountsService,

@@ -27,9 +27,7 @@ private recipes: Recipe[] = [
         )
   ];
 
-  recipeSelected = new EventEmitter<Recipe>();
-
-  constructor(private slService: ShoppingListService){}
+  constructor(private slService: ShoppingListService){ } 
 
   public getRecipes(){
       return this.recipes.slice();
