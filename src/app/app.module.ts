@@ -51,6 +51,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { ObservablesComponent } from './observables/observables.component';
 import { HomeComponent as ObservablesHomeComponent } from './observables/home/home.component';
 import { UserComponent as ObservablesUserComponent } from './observables/user/user.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { UserComponent as ObservablesUserComponent } from './observables/user/us
     RecipeEditComponent,
     ObservablesComponent,
     ObservablesHomeComponent,
-    ObservablesUserComponent
+    ObservablesUserComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +111,6 @@ import { UserComponent as ObservablesUserComponent } from './observables/user/us
     CanDeactivateGuard,
     ServerResolver
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [FormsComponent]
 })
 export class AppModule { }
