@@ -4,7 +4,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -52,6 +52,7 @@ import { ObservablesComponent } from './observables/observables.component';
 import { HomeComponent as ObservablesHomeComponent } from './observables/home/home.component';
 import { UserComponent as ObservablesUserComponent } from './observables/user/user.component';
 import { FormsComponent } from './forms/forms.component';
+import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -91,11 +92,13 @@ import { FormsComponent } from './forms/forms.component';
     ObservablesComponent,
     ObservablesHomeComponent,
     ObservablesUserComponent,
-    FormsComponent
+    FormsComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     //AppRoutingModule,
     AppRouteModule,
@@ -111,6 +114,6 @@ import { FormsComponent } from './forms/forms.component';
     CanDeactivateGuard,
     ServerResolver
   ],
-  bootstrap: [FormsComponent]
+  bootstrap: [ReactiveFormsComponent]
 })
 export class AppModule { }

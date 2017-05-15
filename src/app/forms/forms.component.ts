@@ -12,6 +12,15 @@ export class FormsComponent implements OnInit {
 
   defaultQuestion = 'pet';
   answer = '';
+  genders = ['Male', 'Female'];
+  user = {
+    name: '',
+    email: '',
+    question: '',
+    answer: '',
+    gender: ''
+  };
+  submitted = false;
 
   constructor() { }
 
@@ -20,10 +29,24 @@ export class FormsComponent implements OnInit {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    //this.userForm.setValue for reset of whole form
+    this.userForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    });
   }
 
-  onSubmit(){
-    console.log(this.userForm);
+  onSubmit() {
+    this.submitted = true;
+    this.user.name = this.userForm.value.userData.username;
+    this.user.email = this.userForm.value.userData.email;
+    this.user.question = this.userForm.value.secret;
+    this.user.answer = this.userForm.value.questionsAnswer;
+    this.user.gender = this.userForm.value.gender;
+
+    //reset
+    this.userForm.reset();
   }
 
 }
