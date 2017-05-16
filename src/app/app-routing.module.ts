@@ -9,14 +9,16 @@ import { CockpitComponent } from './data-binding/cockpit/cockpit.component';
 
 
 const APP_ROUTE: Route[] = [
-    { path: '', redirectTo: "", pathMatch: 'full'},
-    { path: 'recipes', component: RecipesComponent, children: [
-        {path: '', component: RecipeStartComponent},
-        {path: 'new', component: RecipeEditComponent},
-        {path: ':id', component: RecipeDetailComponent},
-        {path: ':id/edit', component: RecipeEditComponent},        
-    ]},
-    { path: 'shopping-list', component: ShoppingListComponent}
+    { path: '', redirectTo: "recipes", pathMatch: 'full' },
+    {
+        path: 'recipes', component: RecipesComponent, children: [
+            { path: '', component: RecipeStartComponent },
+            { path: 'new', component: RecipeEditComponent },
+            { path: ':id', component: RecipeDetailComponent },
+            { path: ':id/edit', component: RecipeEditComponent },
+        ]
+    },
+    { path: 'shopping-list', component: ShoppingListComponent }
 ];
 
 @NgModule({
@@ -25,9 +27,9 @@ const APP_ROUTE: Route[] = [
     ],
     exports: [
         RouterModule
-    ]    
+    ]
 })
 
-export class AppRouteModule {   
+export class AppRouteModule {
 
 }

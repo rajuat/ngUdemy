@@ -114,6 +114,6 @@ import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.co
     CanDeactivateGuard,
     ServerResolver
   ],
-  bootstrap: [ReactiveFormsComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
