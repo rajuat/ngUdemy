@@ -50,6 +50,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
   onDelete(index: number) {
     this.shoppingListService.deleteIngredient(index);
+    this.reset();
   }
 
   reset() {
