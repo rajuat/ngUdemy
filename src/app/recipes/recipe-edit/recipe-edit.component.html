@@ -29,7 +29,8 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img [src]="imagePath.value" alt="" class="image-responsive">
+          <img [src]="imagePath.value" alt="" 
+            style="max-width: 300px;" class="image-responsive">
         </div>
       </div>
       <div class="row">
@@ -57,7 +58,9 @@
                 formControlName="amount">
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-danger">X</button>
+              <button class="btn btn-danger" 
+                type="button"
+                (click)="onDeleteIngredient(i)">X</button>
             </div>
           </div>
           <hr/>
