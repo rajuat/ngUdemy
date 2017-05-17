@@ -1,3 +1,4 @@
+import { RecipeService } from './recipes/recipe.service';
 import { ObservablesRoutingModule } from './observables/observables-routing.module';
 import { ServersService } from './routing/servers/servers.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
@@ -112,7 +113,8 @@ import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.co
     AuthGuard,
     AuthService,
     CanDeactivateGuard,
-    ServerResolver
+    ServerResolver,
+    RecipeService
   ],
   bootstrap: [AppComponent]
 })
