@@ -1,3 +1,4 @@
+import { ShortenPipe } from './pipes/shorten.pipe';
 import { RecipeService } from './recipes/recipe.service';
 import { ObservablesRoutingModule } from './observables/observables-routing.module';
 import { ServersService } from './routing/servers/servers.service';
@@ -54,6 +55,8 @@ import { HomeComponent as ObservablesHomeComponent } from './observables/home/ho
 import { UserComponent as ObservablesUserComponent } from './observables/user/user.component';
 import { FormsComponent } from './forms/forms.component';
 import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -94,7 +97,10 @@ import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.co
     ObservablesHomeComponent,
     ObservablesUserComponent,
     FormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    PipesComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -116,6 +122,6 @@ import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.co
     ServerResolver,
     RecipeService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [PipesComponent]
 })
 export class AppModule { }
