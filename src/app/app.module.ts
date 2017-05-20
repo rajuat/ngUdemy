@@ -57,6 +57,13 @@ import { FormsComponent } from './forms/forms.component';
 import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HttpComponent } from './http/http.component';
+import { ServerService } from "./http/server.service";
+import { DataStorageService } from "app/shared/data-storage.service";
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService as FirebaseAuthService} from './auth/auth.service'
+import { AuthGuard as FirebaseAuthGuard } from './auth/auth-guard.service'
 
 @NgModule({
   declarations: [
@@ -100,7 +107,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormsComponent,
     PipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    HttpComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -120,8 +130,12 @@ import { FilterPipe } from './pipes/filter.pipe';
     AuthService,
     CanDeactivateGuard,
     ServerResolver,
-    RecipeService
+    RecipeService, 
+    ServerService,
+    DataStorageService,
+    FirebaseAuthService,
+    FirebaseAuthGuard
   ],
-  bootstrap: [PipesComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
