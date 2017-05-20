@@ -63,7 +63,9 @@ import { DataStorageService } from "app/shared/data-storage.service";
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService as FirebaseAuthService} from './auth/auth.service'
-import { AuthGuard as FirebaseAuthGuard } from './auth/auth-guard.service'
+import { AuthGuard as FirebaseAuthGuard } from './auth/auth-guard.service';
+import { AnimationsComponent } from './animations/animations.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -110,13 +112,16 @@ import { AuthGuard as FirebaseAuthGuard } from './auth/auth-guard.service'
     FilterPipe,
     HttpComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    AnimationsComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     //AppRoutingModule,
     AppRouteModule,
     //ObservablesRoutingModule
@@ -136,6 +141,6 @@ import { AuthGuard as FirebaseAuthGuard } from './auth/auth-guard.service'
     FirebaseAuthService,
     FirebaseAuthGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AnimationsComponent]
 })
 export class AppModule { }
