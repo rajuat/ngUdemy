@@ -1,14 +1,15 @@
 import { 
   Component, 
-  OnInit, 
-  trigger, 
+  OnInit  
+} from '@angular/core';
+import {trigger, 
   state,
   style,
   transition,
   animate,
   keyframes,
   group
-} from '@angular/core';
+} from '@angular/animations'
 
 @Component({
   selector: 'app-root',

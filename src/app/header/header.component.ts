@@ -1,8 +1,8 @@
 import { AuthService } from './../auth/auth.service';
 import { RecipeService } from './../recipes/recipe.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { DataStorageService } from "app/shared/data-storage.service";
-import { Response } from '@angular/http'
+import { DataStorageService } from "src/app/shared/data-storage.service";
+import { HttpResponse } from '@angular/common/http'
 
 @Component({
   selector: 'app-header',

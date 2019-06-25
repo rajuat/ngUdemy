@@ -1,8 +1,8 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ServersService } from "app/routing/servers/servers.service";
-import { CanComponentDeactivate } from "app/routing/servers/edit-server/can-deactivate-guard.service";
-import { Observable } from "rxjs/Observable";
+import { ServersService } from "src/app/routing/servers/servers.service";
+import { CanComponentDeactivate } from "src/app/routing/servers/edit-server/can-deactivate-guard.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-edit-server',

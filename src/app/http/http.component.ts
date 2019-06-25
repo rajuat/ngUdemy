@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServerService } from "app/http/server.service";
-import { Response } from '@angular/http'
+import { ServerService } from "src/app/http/server.service";
+import { HttpResponse } from '@angular/common/http'
 
 @Component({
   selector: 'app-root',
@@ -38,13 +38,14 @@ export class HttpComponent implements OnInit {
   }
 
   onGet(){
-    this.serverService.getServers()
-      .subscribe((servers: any[]) => {
-         this.servers = servers;        
-        },
-        (error) => {
-          console.log(error);
-        });
+    
+    // this.serverService.getServers()
+    //   .subscribe((servers: any[]) => {
+    //      this.servers = servers;        
+    //     },
+    //     (error) => {
+    //       console.log(error);
+    //     });
   }
 
   onSave() {

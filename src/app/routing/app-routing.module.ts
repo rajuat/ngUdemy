@@ -7,10 +7,10 @@ import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { Route, RouterModule } from '@angular/router';
-import { AuthGuard } from "app/routing/auth-guard.service";
-import { CanDeactivateGuard } from "app/routing/servers/edit-server/can-deactivate-guard.service";
-import { ErrorPageComponent } from "app/error-page/error-page.component";
-import { ServerResolver } from "app/routing/servers/server/server-resolver.service";
+import { AuthGuard } from "src/app/routing/auth-guard.service";
+import { CanDeactivateGuard } from "src/app/routing/servers/edit-server/can-deactivate-guard.service";
+import { ErrorPageComponent } from "src/app/error-page/error-page.component";
+import { ServerResolver } from "src/app/routing/servers/server/server-resolver.service";
 
 
 const appRoutes: Route[] = [

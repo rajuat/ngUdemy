@@ -1,11 +1,12 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from "@angular/http";
+import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
 export class ServerService {
 
-    constructor(private http: Http){
+    constructor(private http: HttpClient){
     }
 
     storeServers(servers: any[]) {
@@ -17,24 +18,25 @@ export class ServerService {
             return this.http.put(
             'https://udemy-ng-http-10761.firebaseio.com/data.json', 
             servers,
-            { headers: header });
+            //{ headers: header }
+            );
     }
 
     getServers() {
-        return this.http.get('https://udemy-ng-http-10761.firebaseio.com/data.json')
-            .map((response: Response) => {
+       return this.http.get('https://udemy-ng-http-10761.firebaseio.com/data.json').pipe(
+            map((response: Response) => {
                 return response.json();
             })
-            .catch((error: Response ) => {
+            ,catchError((error: Response ) => {
                 return Observable.throw('Something went wrong');
-            });
+            }));
     }
 
-    getName(){
-        return this.http.get('https://udemy-ng-http-10761.firebaseio.com/appName.json')
-            .map((response: Response) => {
+    getName(){        
+        return this.http.get('https://udemy-ng-http-10761.firebaseio.com/data.json').pipe(
+            map((response: Response) => {
                 return response.json();
-            });
+            }));
     }
 
 }

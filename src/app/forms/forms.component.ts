@@ -8,7 +8,7 @@ import { NgForm } from "@angular/forms";
 })
 export class FormsComponent implements OnInit {
 
-  @ViewChild('f') userForm: NgForm;
+  @ViewChild('f', null) userForm: NgForm;
 
   defaultQuestion = 'pet';
   answer = '';

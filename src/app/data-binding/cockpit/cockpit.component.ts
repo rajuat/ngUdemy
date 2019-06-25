@@ -10,7 +10,7 @@ export class CockpitComponent implements OnInit {
   //newServerName = '';
   //newServerContent = '';
 
-  @ViewChild('serverContentInput') serverContentInput: ElementRef;
+  @ViewChild('serverContentInput', null) serverContentInput: ElementRef;
 
 
   @Output("sAdded") serverAdded = new EventEmitter<{ serverName: string, serverContent: string }>();
